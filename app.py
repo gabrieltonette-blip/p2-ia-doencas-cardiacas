@@ -38,7 +38,10 @@ if st.button("Executar Predição"):
     
     # Exibir Resultado
     st.subheader("Resultado da Predição:")
-    if predicao[0] == 1:
-        st.error("🚨 ALERTA: Probabilidade de doença cardíaca detectada.")
+    st.write(f"*(Diagnóstico interno da máquina: {predicao[0]})*") # Debug para a professora ver
+    
+    # Regra à prova de balas (aceita número, texto ou booleano)
+    if str(predicao[0]) == '1' or str(predicao[0]) == 'True' or predicao[0] == 1:
+        st.error(" ALERTA: Probabilidade de doença cardíaca detectada.")
     else:
-        st.success("✅ Paciente sem risco imediato detectado pelo modelo.") 
+        st.success(" Paciente sem risco imediato detectado pelo modelo.")
